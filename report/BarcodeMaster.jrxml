@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BarcodeMaster" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bf85a669-ab46-4980-8f2d-2727a0d35ebc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="432"/>
+	<parameter name="partNo" class="java.lang.String"/>
+	<parameter name="material1" class="java.lang.String"/>
+	<parameter name="material2" class="java.lang.String"/>
+	<parameter name="material3" class="java.lang.String"/>
+	<parameter name="material4" class="java.lang.String"/>
+	<parameter name="material5" class="java.lang.String"/>
+	<parameter name="material6" class="java.lang.String"/>
+	<parameter name="material7" class="java.lang.String"/>
+	<parameter name="material8" class="java.lang.String"/>
+	<parameter name="barcode1" class="java.lang.String"/>
+	<parameter name="barcode2" class="java.lang.String"/>
+	<parameter name="barcode3" class="java.lang.String"/>
+	<parameter name="barcode4" class="java.lang.String"/>
+	<parameter name="barcode5" class="java.lang.String"/>
+	<parameter name="barcode6" class="java.lang.String"/>
+	<parameter name="barcode7" class="java.lang.String"/>
+	<parameter name="barcode8" class="java.lang.String"/>
+	<field name="COLUMN_0" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="146" y="0" width="79" height="37" uuid="a2e634e7-d1ab-4a6a-83c8-5da9bbf799df"/>
+				<textElement verticalAlignment="Middle">
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[PART :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="225" y="0" width="225" height="37" uuid="819187a6-f686-4e32-865e-8a11d502549f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="20" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{partNo}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="12" y="2" width="121" height="35" uuid="b3fefd40-12e3-4232-af61-14684bfa96b4"/>
+				<imageExpression><![CDATA["C:\\Users\\apichat\\Documents\\Jasper\\135288666751.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="765" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="13" width="555" height="1" uuid="5d3c887a-d8c0-4c7d-915a-eeb4f5e24d69">
+					<printWhenExpression><![CDATA[!$P{barcode1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="1" y="85" width="555" height="1" uuid="e434ed9d-21f8-47fa-85a5-ed1388b5388c">
+					<printWhenExpression><![CDATA[!$P{barcode1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="14" width="1" height="71" uuid="b6f8fee0-6fb7-4f3f-98ab-2951eb231b63">
+					<printWhenExpression><![CDATA[!$P{barcode1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="554" y="13" width="1" height="72" uuid="4a2273b6-61a9-47bd-9ef0-72205d4e28fb">
+					<printWhenExpression><![CDATA[!$P{barcode1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="330" y="15" width="1" height="70" uuid="b8c18afb-8aae-4de7-8294-044df4506d86">
+					<printWhenExpression><![CDATA[!$P{barcode1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="58" y="14" width="273" height="71" uuid="be7176a4-d143-4306-b4cd-f454a41dfabb">
+					<printWhenExpression><![CDATA[!$P{barcode1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{material1}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="390" y="13" width="112" height="72" isPrintInFirstWholeBand="true" uuid="b18afe97-8c47-42be-9416-c4beece83af4">
+					<printWhenExpression><![CDATA[!$P{barcode1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<jr:DataMatrix xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$P{barcode1}]]></jr:codeExpression>
+				</jr:DataMatrix>
+			</componentElement>
+			<line>
+				<reportElement x="43" y="13" width="1" height="72" uuid="6421a194-331b-48d1-af88-86f3390ada40">
+					<printWhenExpression><![CDATA[!$P{barcode1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="1" y="15" width="42" height="70" uuid="9441040e-eb3e-4534-8d03-a11b00f3e0dd">
+					<printWhenExpression><![CDATA[!$P{barcode1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<line>
+				<reportElement x="554" y="94" width="1" height="72" uuid="52dd025b-18a8-46ac-94fb-90d2de060e2c">
+					<printWhenExpression><![CDATA[!$P{barcode2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="330" y="96" width="1" height="70" uuid="b7e697a9-988b-46af-b83b-7136e3c2ffcc">
+					<printWhenExpression><![CDATA[!$P{barcode2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="58" y="95" width="273" height="71" uuid="a62f734d-3979-4d25-a08a-0924b05102bf">
+					<printWhenExpression><![CDATA[!$P{barcode2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{material2}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="166" width="555" height="1" uuid="35fa9349-5f53-4d3a-8f8c-9669dcabcae7">
+					<printWhenExpression><![CDATA[!$P{barcode2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="43" y="94" width="1" height="72" uuid="cbb4a0e4-5a45-44a3-9fb0-a97bef8867e2">
+					<printWhenExpression><![CDATA[!$P{barcode2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="94" width="555" height="1" uuid="a8817c30-d31a-4c73-b3d9-af95d4bde7e9">
+					<printWhenExpression><![CDATA[!$P{barcode2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="95" width="1" height="71" uuid="fdb4bc02-303b-4fa9-aca3-b0677ace9272">
+					<printWhenExpression><![CDATA[!$P{barcode2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<componentElement>
+				<reportElement x="390" y="94" width="112" height="72" uuid="87efbf48-57b9-4646-8914-c701553f285c">
+					<printWhenExpression><![CDATA[!$P{barcode2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<jr:DataMatrix xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$P{barcode2}]]></jr:codeExpression>
+				</jr:DataMatrix>
+			</componentElement>
+			<staticText>
+				<reportElement x="1" y="96" width="42" height="70" uuid="9f16efea-d9bc-4a5c-a7d2-1083c5c9eabe">
+					<printWhenExpression><![CDATA[!$P{barcode2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<line>
+				<reportElement x="554" y="173" width="1" height="72" uuid="eb7cc0c8-8c00-4a82-8454-5f83de1687ca">
+					<printWhenExpression><![CDATA[!$P{barcode3}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="330" y="175" width="1" height="70" uuid="a4418682-f3e7-49a8-be0a-0f8a9256568b">
+					<printWhenExpression><![CDATA[!$P{barcode3}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="58" y="174" width="273" height="71" uuid="1121d4a1-d590-4385-883c-9fa87f113afb">
+					<printWhenExpression><![CDATA[!$P{barcode3}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{material3}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="245" width="555" height="1" uuid="88dc8da4-ded1-4557-8b49-7ed0dddfe1bf">
+					<printWhenExpression><![CDATA[!$P{barcode3}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="43" y="173" width="1" height="72" uuid="af4238d5-2119-4ae9-9ee0-e8eff3609b3f">
+					<printWhenExpression><![CDATA[!$P{barcode3}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="173" width="555" height="1" uuid="4a6ca8c3-36ad-4d03-ab60-08de4134eb32">
+					<printWhenExpression><![CDATA[!$P{barcode3}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="174" width="1" height="71" uuid="1ea3a108-f3a4-4bb7-9a47-304795fb47ff">
+					<printWhenExpression><![CDATA[!$P{barcode3}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<componentElement>
+				<reportElement x="390" y="173" width="112" height="72" uuid="be9650fe-d691-492b-ac6b-b13b34fd7342">
+					<printWhenExpression><![CDATA[!$P{barcode3}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<jr:DataMatrix xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$P{barcode3}]]></jr:codeExpression>
+				</jr:DataMatrix>
+			</componentElement>
+			<staticText>
+				<reportElement x="1" y="175" width="42" height="70" uuid="7178cf5b-bbda-47bb-9710-371bbcf2b30a">
+					<printWhenExpression><![CDATA[!$P{barcode3}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<line>
+				<reportElement x="554" y="252" width="1" height="72" uuid="e473af4b-692b-4a01-a50d-823a97dd6195">
+					<printWhenExpression><![CDATA[!$P{barcode4}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="330" y="254" width="1" height="70" uuid="52962fc8-240f-4ef8-8f09-b4456dc7b384">
+					<printWhenExpression><![CDATA[!$P{barcode4}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="58" y="253" width="273" height="71" uuid="59f4a573-093b-44c0-836e-714acc423a3a">
+					<printWhenExpression><![CDATA[!$P{barcode4}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{material4}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="324" width="555" height="1" uuid="fa213179-0bf6-4605-8010-fc102e5353a1">
+					<printWhenExpression><![CDATA[!$P{barcode4}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="43" y="252" width="1" height="72" uuid="d8a5ae2e-5861-4242-a25b-9cd39c0aa6a5">
+					<printWhenExpression><![CDATA[!$P{barcode4}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="252" width="555" height="1" uuid="fbc8d231-ddeb-48cf-9665-7051012558ae">
+					<printWhenExpression><![CDATA[!$P{barcode4}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="253" width="1" height="71" uuid="c6138d51-3877-46af-bb85-1a4a843d884e">
+					<printWhenExpression><![CDATA[!$P{barcode4}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<componentElement>
+				<reportElement x="390" y="252" width="112" height="72" uuid="209d9a54-915e-4ca4-8c58-74bae67c0a5d">
+					<printWhenExpression><![CDATA[!$P{barcode4}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<jr:DataMatrix xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$P{barcode4}]]></jr:codeExpression>
+				</jr:DataMatrix>
+			</componentElement>
+			<staticText>
+				<reportElement x="1" y="254" width="42" height="70" uuid="d6605323-b1b7-4ac8-a0c8-004273b8a6f1">
+					<printWhenExpression><![CDATA[!$P{barcode4}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<line>
+				<reportElement x="554" y="333" width="1" height="72" uuid="9f4d4083-3a8d-462a-99e7-2ebd95ea1984">
+					<printWhenExpression><![CDATA[!$P{barcode5}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="330" y="335" width="1" height="70" uuid="f4d6fa71-44c2-4686-9fdc-0135f085a140">
+					<printWhenExpression><![CDATA[!$P{barcode5}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="58" y="334" width="273" height="71" uuid="e62c71ff-5634-4ef8-9cf0-734e17f9c65e">
+					<printWhenExpression><![CDATA[!$P{barcode5}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{material5}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="405" width="555" height="1" uuid="e0063f2c-a180-40f7-9a1a-cf264506b1ce">
+					<printWhenExpression><![CDATA[!$P{barcode5}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="43" y="333" width="1" height="72" uuid="ef0cda4d-52ef-4796-a4e0-9b946511131b">
+					<printWhenExpression><![CDATA[!$P{barcode5}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="333" width="555" height="1" uuid="2326f33b-be26-4ad8-abf3-b8f966bde679">
+					<printWhenExpression><![CDATA[!$P{barcode5}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="334" width="1" height="71" uuid="41e020ef-c072-4bb5-8cd5-429e03e2b714">
+					<printWhenExpression><![CDATA[!$P{barcode5}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<componentElement>
+				<reportElement x="390" y="333" width="112" height="72" uuid="6b5b4dcb-d61b-444d-b6b4-5500fe335e53">
+					<printWhenExpression><![CDATA[!$P{barcode5}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<jr:DataMatrix xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$P{barcode5}]]></jr:codeExpression>
+				</jr:DataMatrix>
+			</componentElement>
+			<staticText>
+				<reportElement x="1" y="335" width="42" height="70" uuid="63fe8603-5b6c-4705-bd1e-22ea216fa8cf">
+					<printWhenExpression><![CDATA[!$P{barcode5}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<line>
+				<reportElement x="554" y="415" width="1" height="72" uuid="8766b001-dbc1-4ce6-9674-14ff817e796a">
+					<printWhenExpression><![CDATA[!$P{barcode6}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="330" y="417" width="1" height="70" uuid="714a884e-6cbb-43e9-a62b-a997a605857c">
+					<printWhenExpression><![CDATA[!$P{barcode6}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="58" y="416" width="273" height="71" uuid="645b7a18-3d77-430a-89b0-7f763027b40b">
+					<printWhenExpression><![CDATA[!$P{barcode6}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{material6}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="487" width="555" height="1" uuid="bf8b987a-d9a9-408b-b384-a69bf308826d">
+					<printWhenExpression><![CDATA[!$P{barcode6}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="43" y="415" width="1" height="72" uuid="666ab8b8-4351-4b02-80bb-e34b214653fb">
+					<printWhenExpression><![CDATA[!$P{barcode6}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="415" width="555" height="1" uuid="f35f1593-c6bf-405e-a288-5ba2f8799aaa">
+					<printWhenExpression><![CDATA[!$P{barcode6}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="416" width="1" height="71" uuid="59d2487a-8708-49e3-ab47-fc06c85f1973">
+					<printWhenExpression><![CDATA[!$P{barcode6}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<componentElement>
+				<reportElement x="390" y="415" width="112" height="72" uuid="c49b4954-bdff-4b64-a32f-8477f7a965b8">
+					<printWhenExpression><![CDATA[!$P{barcode6}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<jr:DataMatrix xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$P{barcode6}]]></jr:codeExpression>
+				</jr:DataMatrix>
+			</componentElement>
+			<staticText>
+				<reportElement x="1" y="417" width="42" height="70" uuid="536fc437-e688-4482-b0e0-27b1db4347c4">
+					<printWhenExpression><![CDATA[!$P{barcode6}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<line>
+				<reportElement x="554" y="496" width="1" height="72" uuid="caed3c27-9d7b-4330-baa0-a16ee2a8e012">
+					<printWhenExpression><![CDATA[!$P{barcode7}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="330" y="498" width="1" height="70" uuid="91021fdc-84d1-4c92-a55e-a5d13ac97b31">
+					<printWhenExpression><![CDATA[!$P{barcode7}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="58" y="497" width="273" height="71" uuid="94bf36a0-0256-4345-a336-91dbb7d966a5">
+					<printWhenExpression><![CDATA[!$P{barcode7}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{material7}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="43" y="496" width="1" height="72" uuid="1654d48b-83d3-497e-b919-3d634df1db5f">
+					<printWhenExpression><![CDATA[!$P{barcode7}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="1" y="568" width="555" height="1" uuid="24ef6dd6-ef65-467a-b0e1-846604a592f4">
+					<printWhenExpression><![CDATA[!$P{barcode7}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="496" width="555" height="1" uuid="8bda0578-5076-4689-8331-fccd61ea429d">
+					<printWhenExpression><![CDATA[!$P{barcode7}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="497" width="1" height="71" uuid="1457424b-2bc7-402d-9581-03f7b549e569">
+					<printWhenExpression><![CDATA[!$P{barcode7}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<componentElement>
+				<reportElement x="390" y="496" width="112" height="72" uuid="f2b946a9-32c8-4dbf-8aab-771966f6c138">
+					<printWhenExpression><![CDATA[!$P{barcode7}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<jr:DataMatrix xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$P{barcode7}]]></jr:codeExpression>
+				</jr:DataMatrix>
+			</componentElement>
+			<staticText>
+				<reportElement x="1" y="498" width="42" height="70" uuid="6377b039-6719-4eb0-9eec-b51ddb1dd2c2">
+					<printWhenExpression><![CDATA[!$P{barcode7}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<line>
+				<reportElement x="554" y="575" width="1" height="72" uuid="266d62c4-b1e4-4f26-8da1-944939cd885c">
+					<printWhenExpression><![CDATA[!$P{barcode8}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="330" y="577" width="1" height="70" uuid="abd0f66c-856b-4b86-894b-32f6a4fc48e3">
+					<printWhenExpression><![CDATA[!$P{barcode8}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="58" y="576" width="273" height="71" uuid="8553be15-d1a3-480a-8d87-0abaa4d08a80">
+					<printWhenExpression><![CDATA[!$P{barcode8}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{material8}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="43" y="575" width="1" height="72" uuid="3f680f12-f2d9-4bfe-8f9b-ce1c0a942a61">
+					<printWhenExpression><![CDATA[!$P{barcode8}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="1" y="647" width="555" height="1" uuid="9c9eb82c-9020-48c1-b0f6-25af0a90656f">
+					<printWhenExpression><![CDATA[!$P{barcode8}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="575" width="555" height="1" uuid="d9951817-25f2-43fd-83e2-60c1007fb79c">
+					<printWhenExpression><![CDATA[!$P{barcode8}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="0" y="576" width="1" height="71" uuid="f867e9fe-1e7c-42d0-a60c-203688cd69f5">
+					<printWhenExpression><![CDATA[!$P{barcode8}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<componentElement>
+				<reportElement x="390" y="575" width="112" height="72" uuid="e0163706-3011-4d8f-b8bd-724ac4033ce3">
+					<printWhenExpression><![CDATA[!$P{barcode8}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<jr:DataMatrix xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$P{barcode8}]]></jr:codeExpression>
+				</jr:DataMatrix>
+			</componentElement>
+			<staticText>
+				<reportElement x="1" y="577" width="42" height="70" uuid="cf800a95-47e5-4847-a8a1-688b14dc7e62">
+					<printWhenExpression><![CDATA[!$P{barcode8}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[8]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+</jasperReport>

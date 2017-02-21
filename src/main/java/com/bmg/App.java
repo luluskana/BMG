@@ -1,5 +1,10 @@
 package com.bmg;
 
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.data.JRCsvDataSource;
+import net.sf.jasperreports.view.JasperViewer;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -16,6 +21,10 @@ import javax.swing.border.BevelBorder;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
@@ -173,25 +182,87 @@ public class App {
         JButton btnPrintBarcode = new JButton("Print Barcode");
         btnPrintBarcode.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String partNumber = textField.getText();
-                String material1 = textField_1.getText();
-                String material2 = textField_2.getText();
-                String material3 = textField_3.getText();
-                String material4 = textField_4.getText();
-                String material5 = textField_5.getText();
-                String material6 = textField_6.getText();
-                String material7 = textField_7.getText();
-                String material8 = textField_8.getText();
-                System.out.println("-= Part Number : " + partNumber);
-                System.out.println("-= Material 1 : " + material1);
-                System.out.println("-= Material 2 : " + material2);
-                System.out.println("-= Material 3 : " + material3);
-                System.out.println("-= Material 4 : " + material4);
-                System.out.println("-= Material 5 : " + material5);
-                System.out.println("-= Material 6 : " + material6);
-                System.out.println("-= Material 7 : " + material7);
-                System.out.println("-= Material 8 : " + material8);
-                System.out.println("-= ============================== =- ");
+                try {
+                    String partNumber = textField.getText();
+                    String material1 = textField_1.getText();
+                    String material2 = textField_2.getText();
+                    String material3 = textField_3.getText();
+                    String material4 = textField_4.getText();
+                    String material5 = textField_5.getText();
+                    String material6 = textField_6.getText();
+                    String material7 = textField_7.getText();
+                    String material8 = textField_8.getText();
+
+                    JRCsvDataSource ds = new JRCsvDataSource(new File("report/data.csv"));
+                    ds.setColumnNames(new String[] {"id", "name", "salary"});
+                    String fileName = "report/BarcodeMaster.jasper";
+
+                    Map map = new HashMap();
+                    map.put("partNo", partNumber);
+                    map.put("material1", material1);
+                    map.put("material2", material2);
+                    map.put("material3", material3);
+                    map.put("material4", material4);
+                    map.put("material5", material5);
+                    map.put("material6", material6);
+                    map.put("material7", material7);
+                    map.put("material8", material8);
+
+                    if(!textField_1.getText().isEmpty()) {
+                        map.put("barcode1", material1 + "{" + partNumber);
+                    } else {
+                        map.put("barcode1", null);
+                    }
+
+                    if(!textField_2.getText().isEmpty()) {
+                        map.put("barcode2", material2 + "{" + partNumber);
+                    } else {
+                        map.put("barcode2", null);
+                    }
+
+                    if(!textField_3.getText().isEmpty()) {
+                        map.put("barcode3", material3 + "{" + partNumber);
+                    } else {
+                        map.put("barcode3", null);
+                    }
+
+                    if(!textField_4.getText().isEmpty()) {
+                        map.put("barcode4", material4 + "{" + partNumber);
+                    } else {
+                        map.put("barcode4", null);
+                    }
+
+                    if(!textField_5.getText().isEmpty()) {
+                        map.put("barcode5", material5 + "{" + partNumber);
+                    } else {
+                        map.put("barcode5", null);
+                    }
+
+                    if(!textField_6.getText().isEmpty()) {
+                        map.put("barcode6", material6 + "{" + partNumber);
+                    } else {
+                        map.put("barcode6", null);
+                    }
+
+                    if(!textField_7.getText().isEmpty()) {
+                        map.put("barcode7", material7 + "{" + partNumber);
+                    } else {
+                        map.put("barcode7", null);
+                    }
+
+                    if(!textField_8.getText().isEmpty()) {
+                        map.put("barcode8", material8 + "{" + partNumber);
+                    } else {
+                        map.put("barcode8", null);
+                    }
+
+                    JasperPrint jasperPrint = JasperFillManager.fillReport(fileName, map, ds);
+                    JasperViewer view = new JasperViewer(jasperPrint, false);
+                    view.setVisible(true);
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                    JOptionPane.showMessageDialog(frmBarcodeMaster,"Data error.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
         btnPrintBarcode.setBounds(192, 405, 115, 31);
